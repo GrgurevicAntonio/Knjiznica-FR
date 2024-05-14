@@ -86,6 +86,7 @@ namespace KnjiznicaFR.Forme
             this.btnVrati.TabIndex = 4;
             this.btnVrati.Text = "Vrati";
             this.btnVrati.UseVisualStyleBackColor = true;
+            this.btnVrati.Click += new System.EventHandler(this.btnVrati_Click);
             // 
             // menuStrip1
             // 

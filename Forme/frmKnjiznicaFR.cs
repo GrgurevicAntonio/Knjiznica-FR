@@ -78,5 +78,21 @@ namespace KnjiznicaFR.Forme
             
             }
         }
+
+        private void btnVrati_Click(object sender, EventArgs e)
+        {
+            if (lbPosudbe.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose a posudbu");
+            }
+            else
+            {
+                this.kontekst.BrisiPosudbu((Posudba)lbPosudbe.SelectedItem);
+                OsvjeziPosudbe();
+            }
+
+           
+
+        }
     }
 }
