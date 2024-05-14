@@ -22,6 +22,12 @@ namespace KnjiznicaFR.Forme
         private void frmKnjiznicaFR_Load(object sender, EventArgs e)
         {
             kontekst = new PodatkovniKontekst();
+            OsvjeziPosudbe();
+        }
+
+        private void OsvjeziPosudbe()
+        {
+            Helper.PrikaziListuUListBoxu<Posudba>(this.kontekst.Posudbe, lbPosudbe);
         }
 
         private void uceniciToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +45,38 @@ namespace KnjiznicaFR.Forme
         {
             Knjige formaKnjige = new Knjige(this.kontekst);
             formaKnjige.ShowDialog();
+        }
+
+        private void btnPosudi_Click(object sender, EventArgs e)
+        {
+            DetaljiPosudbe detaljiPosudbe = new DetaljiPosudbe(this.kontekst);
+            
+            if(detaljiPosudbe.ShowDialog() == DialogResult.OK)
+            {
+                this.kontekst.DodajPosudbu(detaljiPosudbe.Posudba);
+                OsvjeziPosudbe();
+
+            }
+        }
+
+        private void btnUredi_Click(object sender, EventArgs e)
+        {
+            if(lbPosudbe.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose posudba");
+            }
+            else
+            {
+                DetaljiPosudbe detaljiPosudbe = new DetaljiPosudbe(this.kontekst);
+                detaljiPosudbe.Posudba = (Posudba)lbPosudbe.SelectedItem;
+                
+                if(detaljiPosudbe.ShowDialog() == DialogResult.OK)
+                {
+                    this.kontekst.SpremiPosudbe();
+                    OsvjeziPosudbe();
+                }
+            
+            }
         }
     }
 }

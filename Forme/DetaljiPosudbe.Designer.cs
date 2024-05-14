@@ -29,24 +29,25 @@ namespace KnjiznicaFR.Forme
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.lbUcenici = new System.Windows.Forms.ListBox();
             this.lbKnjige = new System.Windows.Forms.ListBox();
-            this.cbBrojDana = new System.Windows.Forms.ComboBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.lUcenik = new System.Windows.Forms.Label();
             this.lKnjiga = new System.Windows.Forms.Label();
             this.lDatumPosudbe = new System.Windows.Forms.Label();
             this.lBrojDana = new System.Windows.Forms.Label();
+            this.nudBrojDana = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBrojDana)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpDatum
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(49, 255);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpDatum.Location = new System.Drawing.Point(49, 255);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpDatum.TabIndex = 0;
+            this.dtpDatum.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // lbUcenici
             // 
@@ -66,54 +67,15 @@ namespace KnjiznicaFR.Forme
             this.lbKnjige.Size = new System.Drawing.Size(206, 148);
             this.lbKnjige.TabIndex = 2;
             // 
-            // cbBrojDana
-            // 
-            this.cbBrojDana.FormattingEnabled = true;
-            this.cbBrojDana.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.cbBrojDana.Location = new System.Drawing.Point(364, 253);
-            this.cbBrojDana.Name = "cbBrojDana";
-            this.cbBrojDana.Size = new System.Drawing.Size(66, 24);
-            this.cbBrojDana.TabIndex = 3;
-            // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(255, 334);
+            this.btnOK.Location = new System.Drawing.Point(254, 334);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(121, 63);
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lUcenik
             // 
@@ -151,22 +113,31 @@ namespace KnjiznicaFR.Forme
             this.lBrojDana.TabIndex = 8;
             this.lBrojDana.Text = "Broj dana";
             // 
+            // nudBrojDana
+            // 
+            this.nudBrojDana.Location = new System.Drawing.Point(364, 254);
+            this.nudBrojDana.Name = "nudBrojDana";
+            this.nudBrojDana.Size = new System.Drawing.Size(120, 22);
+            this.nudBrojDana.TabIndex = 9;
+            // 
             // DetaljiPosudbe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nudBrojDana);
             this.Controls.Add(this.lBrojDana);
             this.Controls.Add(this.lDatumPosudbe);
             this.Controls.Add(this.lKnjiga);
             this.Controls.Add(this.lUcenik);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.cbBrojDana);
             this.Controls.Add(this.lbKnjige);
             this.Controls.Add(this.lbUcenici);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDatum);
             this.Name = "DetaljiPosudbe";
             this.Text = "DetaljiPosudbe";
+            this.Load += new System.EventHandler(this.DetaljiPosudbe_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBrojDana)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,14 +145,14 @@ namespace KnjiznicaFR.Forme
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.ListBox lbUcenici;
         private System.Windows.Forms.ListBox lbKnjige;
-        private System.Windows.Forms.ComboBox cbBrojDana;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label lUcenik;
         private System.Windows.Forms.Label lKnjiga;
         private System.Windows.Forms.Label lDatumPosudbe;
         private System.Windows.Forms.Label lBrojDana;
+        private System.Windows.Forms.NumericUpDown nudBrojDana;
     }
 }

@@ -19,6 +19,7 @@ namespace KnjiznicaFR.Model
         {
             Ucenici = UcitajUcenike();
             Knjige = UcitajKnjige();
+            Posudbe = UcitajPosudbe();
         }
         public void DodajPosudbu(Posudba posudba)
         {
