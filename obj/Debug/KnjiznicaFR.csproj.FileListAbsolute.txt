@@ -1,0 +1,13 @@
+C:\Users\Korisnik\source\repos\KnjiznicaFR\bin\Debug\KnjiznicaFR.exe
+C:\Users\Korisnik\source\repos\KnjiznicaFR\bin\Debug\KnjiznicaFR.pdb
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.csproj.AssemblyReference.cache
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Properties.Resources.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.csproj.GenerateResource.cache
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.exe
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.pdb
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.DetaljiPosudbe.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.DetaljiUcenika.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.Knjige.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.Ucenici.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.frmKnjiznicaFR.resources

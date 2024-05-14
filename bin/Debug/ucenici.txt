@@ -1,3 +1,3 @@
-123456789|Spyro|Sparic|Vulkan|NoHabloTelefon|NoHabloRazredo
-666666666|Teemo|Toksic|Pakao|666666|PresaoZivot
+123456789|Spyro|Sparic|Vulkan|NoHabloTelefon|1
+666666666|Teemo|Toksic|Pakao|666666|2
 432525526|Nit|Cicut|U podrumu od svojih roditelja|09966353|4

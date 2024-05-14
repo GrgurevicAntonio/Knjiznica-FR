@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace KnjiznicaFR
+namespace KnjiznicaFR.Forme
 {
-    public partial class Form1 : Form
+    public partial class Knjige : Form
     {
-        public Form1()
+        public Knjige()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
