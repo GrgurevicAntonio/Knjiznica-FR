@@ -14,10 +14,22 @@ namespace KnjiznicaFR.Model
 
         private string datUcenici = "ucenici.txt";
         private string datKnjige = "knjige.txt";
+        private string datPosudbe = "posudbe.txt";
         public PodatkovniKontekst()
         {
             Ucenici = UcitajUcenike();
             Knjige = UcitajKnjige();
+        }
+        public void DodajPosudbu(Posudba posudba)
+        {
+            this.Posudbe.Add(posudba);
+            SpremiPosudbe();
+        }
+
+        public void BrisiPosudbu(Posudba posudba)
+        {
+            this.Posudbe.Remove(posudba);
+            SpremiPosudbe();
         }
 
         public void DodajKnjigu(Knjiga knjiga)
@@ -116,6 +128,50 @@ namespace KnjiznicaFR.Model
                     sw.WriteLine("{0}|{1}|{2}|{3}|{4}|{5}", trenutniUcenik.OIB, trenutniUcenik.Ime,
                         trenutniUcenik.Prezime, trenutniUcenik.Adresa, trenutniUcenik.Telefon,
                         trenutniUcenik.Razred);
+                }
+            }
+        }
+        public List<Posudba> UcitajPosudbe()
+        {
+            List<Posudba> rezultat = new List<Posudba>();
+
+            if (File.Exists(datPosudbe))
+            {
+                using (StreamReader sr = new StreamReader(datPosudbe))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string linija = sr.ReadLine();
+                        Posudba trenutnaPosudba = new Posudba();
+                        string[] polja = linija.Split('|');
+                        trenutnaPosudba.Ucenik = this.Ucenici.Find(
+                            delegate(Ucenik ucenik)
+                            {
+                                return ucenik.OIB == polja[0];
+                            });
+                        trenutnaPosudba.Knjiga = this.Knjige.Find(
+                            delegate (Knjiga knjiga)
+                            {
+                                return knjiga.ISBN == polja[1];
+                            });
+                        trenutnaPosudba.DatumPosudbe = DateTime.Parse(polja[2]);
+                        trenutnaPosudba.BrojDana = int.Parse(polja[3]);
+
+                        rezultat.Add(trenutnaPosudba);
+                    }
+                }
+            }
+            return rezultat;
+        }
+
+        public void SpremiPosudbe()
+        {
+            using (StreamWriter sw = new StreamWriter(datPosudbe))
+            {
+                foreach (Posudba trenutnaPosudba in this.Posudbe)
+                {
+                    sw.WriteLine("{0}|{1}|{2}|{3}", trenutnaPosudba.Ucenik.OIB, trenutnaPosudba.Knjiga.ISBN,
+                        trenutnaPosudba.DatumPosudbe, trenutnaPosudba.BrojDana);
                 }
             }
         }

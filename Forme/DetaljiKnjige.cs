@@ -58,7 +58,7 @@ namespace KnjiznicaFR.Forme
                 this.Knjiga.GodinaIzdanja = (int)nudGodinaIzdanja.Value;
                 this.Knjiga.BrojPrimjeraka = int.Parse(cbBrojPrimjeraka.Text);
 
-
+                this.DialogResult = DialogResult.OK;
             }
         }
     }
