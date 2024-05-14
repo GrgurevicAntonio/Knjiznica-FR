@@ -11,3 +11,4 @@ C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.DetaljiUc
 C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.Knjige.resources
 C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.Ucenici.resources
 C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.frmKnjiznicaFR.resources
+C:\Users\Korisnik\source\repos\KnjiznicaFR\obj\Debug\KnjiznicaFR.Forme.DetaljiKnjige.resources

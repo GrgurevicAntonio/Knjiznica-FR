@@ -13,15 +13,72 @@ namespace KnjiznicaFR.Model
         public List<Posudba> Posudbe;
 
         private string datUcenici = "ucenici.txt";
+        private string datKnjige = "knjige.txt";
         public PodatkovniKontekst()
         {
             Ucenici = UcitajUcenike();
+            Knjige = UcitajKnjige();
+        }
+
+        public void DodajKnjigu(Knjiga knjiga)
+        {
+            this.Knjige.Add(knjiga);
+            SpremiKnjige();
+        }
+
+        public void BrisiKnjigu(Knjiga knjiga)
+        {
+            this.Knjige.Remove(knjiga);
+            SpremiKnjige();
         }
 
         public void DodajUcenika(Ucenik ucenik)
         {
             this.Ucenici.Add(ucenik);
             SpremiUcenike();
+        }
+
+        public void ObrisiUcenika(Ucenik ucenik)
+        {
+            this.Ucenici.Remove(ucenik);
+            SpremiUcenike();
+        }
+
+        public List<Knjiga> UcitajKnjige()
+        {
+            List<Knjiga> rezultat = new List<Knjiga>();
+
+            if (File.Exists(datKnjige))
+            {
+                using (StreamReader sr = new StreamReader(datKnjige))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string linija = sr.ReadLine();
+                        Knjiga trenutnaKnjiga = new Knjiga();
+                        string[] polja = linija.Split('|');
+                        trenutnaKnjiga.ISBN = polja[0];
+                        trenutnaKnjiga.Autor = polja[1];
+                        trenutnaKnjiga.Naslov = polja[2];
+                        trenutnaKnjiga.GodinaIzdanja = int.Parse(polja[3]);
+                        trenutnaKnjiga.BrojPrimjeraka = int.Parse(polja[4]);
+
+                        rezultat.Add(trenutnaKnjiga);
+                    }
+                }
+            }
+            return rezultat;
+        }
+        public void SpremiKnjige()
+        {
+            using (StreamWriter sw = new StreamWriter(datKnjige))
+            {
+                foreach (Knjiga k in this.Knjige)
+                {
+                    sw.WriteLine("{0}|{1}|{2}|{3}|{4}", k.ISBN, k.Autor,
+                        k.Naslov, k.GodinaIzdanja, k.BrojPrimjeraka);
+                }
+            }
         }
 
         public List<Ucenik> UcitajUcenike()

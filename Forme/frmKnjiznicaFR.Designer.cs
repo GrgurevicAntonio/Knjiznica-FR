@@ -110,6 +110,7 @@ namespace KnjiznicaFR.Forme
             this.knjigeToolStripMenuItem.Name = "knjigeToolStripMenuItem";
             this.knjigeToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.knjigeToolStripMenuItem.Text = "Knjige";
+            this.knjigeToolStripMenuItem.Click += new System.EventHandler(this.knjigeToolStripMenuItem_Click);
             // 
             // frmKnjiznicaFR
             // 

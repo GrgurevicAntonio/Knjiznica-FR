@@ -42,5 +42,37 @@ namespace KnjiznicaFR.Forme
                 OsvjeziUcenike();
             }
         }
+
+        private void btnUredi_Click(object sender, EventArgs e)
+        {
+            if (lbUcenici.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a student");
+            }
+            else
+            {
+                DetaljiUcenika detaljiUcenika = new DetaljiUcenika();
+                detaljiUcenika.Ucenik = (Ucenik)lbUcenici.SelectedItem;
+            
+                if(detaljiUcenika.ShowDialog() == DialogResult.OK)
+                {
+                    this.kontekst.SpremiUcenike();
+                    OsvjeziUcenike();
+                }
+            }
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            if(lbUcenici.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a student");
+            }
+            else
+            {
+                this.kontekst.ObrisiUcenika((Ucenik)lbUcenici.SelectedItem);
+                OsvjeziUcenike();
+            }
+        }
     }
 }

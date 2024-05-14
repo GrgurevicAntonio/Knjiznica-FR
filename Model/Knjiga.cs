@@ -13,9 +13,9 @@ namespace KnjiznicaFR.Model
 
         public string Naslov { get; set; }
 
-        public string GodinaIzdanja { get; set; }
+        public int GodinaIzdanja { get; set; }
 
-        public string BrojPrimjeraka { get; set; }
+        public int BrojPrimjeraka { get; set; }
 
         public override string ToString()
         {
